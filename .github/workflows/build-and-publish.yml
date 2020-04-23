@@ -7,9 +7,9 @@ on:
     branches: [ master ]
 
 jobs:
-  runs-on: ubuntu-latest
 
   build:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - run: npm i -g @skyux-sdk/cli
@@ -19,6 +19,7 @@ jobs:
       - run: npm run build
 
   publish:
+    runs-on: ubuntu-latest
     steps:
       - name: Publish
         run: echo I would publish!
