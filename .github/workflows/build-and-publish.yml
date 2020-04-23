@@ -16,5 +16,7 @@ jobs:
       - run: npm run test -- --headless
       - run: npm run build
       - name: Publish
-        run: echo I would publish!
-        if: github.event.push
+        run: |
+          echo I would publish!
+          git status
+        if: github.event_name == 'push'
